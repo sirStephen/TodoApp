@@ -1,7 +1,7 @@
 import React from 'react';
-import TodoList from "../todoList/TodoList";
-import TodoItems from '../todoItems/TodoItems';
-import Search from '../search/Search';
+import { TodoList } from "../todoList/TodoList";
+import { TodoItems } from '../todoItems/TodoItems';
+import { Search } from '../search/Search';
 
 export default class App extends React.Component {
     constructor(props) {
