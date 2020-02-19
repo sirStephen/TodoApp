@@ -1,8 +1,9 @@
 import React from 'react';
 import TodoList from "../todoList/TodoList";
 import TodoItems from '../todoItems/TodoItems';
+import Search from '../search/Search';
 
-class App extends React.Component {
+export default class App extends React.Component {
     constructor(props) {
         super(props)
 
@@ -15,6 +16,12 @@ class App extends React.Component {
             }
         }
 
+    }
+
+    onHandleSearch = (event) => {
+        this.setState({
+            search: event.target.value
+        });
     }
 
     handleInput = (event) => {
@@ -60,43 +67,39 @@ class App extends React.Component {
         });
     }
 
-    onHandleSearch = (event) => {
-        const searchText = event.target.value;
-
-        const filterTodos = this.state.todos;
-        // console.log(filterTodos)
-
-        const filteredTodos = filterTodos.filter(todo => {
-            console.log(todo.text.indexOf(searchText) !== -1)
-            return todo.text.indexOf(searchText) !== -1;
-        })
-
-        // console.log(filteredTodos)
-
-        this.setState({
-            search: searchText
-        });
-    }
 
     render() {
+        // THIS CAN WORK AS WELL
+        // const filteredTodos = this.state.todos.filter(todo => {
+        //     return todo.text.toLowerCase().includes(this.state.search.toLowerCase());
+        // })
+
+        const filteredTodos = this.state.todos.filter(todo => {
+            return todo.text.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;
+        })
+
+        console.log(filteredTodos)
         return(
             <div className="app">
-                <TodoList 
-                    addTodos={this.addTodos}
-                    handleInput={this.handleInput}
-                    currentTodo={this.state.currentTodo}
-                    onHandleSearch={this.onHandleSearch}
-                    search={this.state.search}
-                    todos={this.state.todos}
-                />
+                <div className='is-flex'>
+                    <TodoList 
+                        addTodos={this.addTodos}
+                        handleInput={this.handleInput}
+                        currentTodo={this.state.currentTodo}
+                        todos={this.state.todos}
+                    />
+
+                    <Search
+                        onHandleSearch={this.onHandleSearch}
+                    />
+                </div>
 
                 <TodoItems
-                    entries={this.state.todos}
+                    entries={filteredTodos}
                     deleteTodo={this.deleteTodo}
                 />
+
             </div>
         );
     }
 }
-
-export default App;

@@ -1,15 +1,7 @@
 import React from 'react';
 
-class TodoList extends React.Component {
+export default class TodoList extends React.Component {
     render() {
-        // const filterTodos = this.props.todos;
-        // console.log(filterTodos)
-
-        // const filteredTodos = filterTodos.filter(todo => {
-        //     console.log(todo.text.indexOf(this.props.search) !== -1)
-        //     return todo.text.indexOf(this.props.search) !== -1;
-        // })
-
         return(
             <div className="todoListMain">
                 <div className="header is-flex">
@@ -21,18 +13,8 @@ class TodoList extends React.Component {
                         />
                         <button type="submit">Add Task</button>
                     </form>
-                    <div className='p2 search'>
-                        <input 
-                            type="text"
-                            placeholder='Search Tasks'
-                            value={this.props.search}
-                            onChange={this.props.onHandleSearch}
-                        />
-                    </div>
                 </div>
             </div>
         )
     }
 }
-
-export default TodoList;

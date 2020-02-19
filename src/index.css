@@ -103,61 +103,30 @@ h6 {
 .space {
     padding: 6rem 0;
 }
-
-#container {
-    display: flex;
-    justify-content: center;
-    flex-direction: column-reverse;
-  }
   
-  .todoListMain .header input {
+.todoListMain .header input {
     padding: 10px;
     font-size: 16px;
     border: 2px solid #FFF;
     width: 165px;
-  }
+}
   
-  .todoListMain .header button {
-    padding: 10px;
-    font-size: 16px;
-    margin: 10px;
-    margin-right: 0px;
-    background-color: #0066FF;
-    color: #FFF;
-    border: 2px solid #0066FF;
-  }
+.todoListMain .header button {
+  padding: 10px;
+  font-size: 16px;
+  margin: 10px;
+  margin-right: 0px;
+  background-color: #0066FF;
+  color: #FFF;
+  border: 2px solid #0066FF;
+}
   
-  .todoListMain .header button:hover {
+.todoListMain .header button:hover {
     background-color: #003399;
     border: 2px solid #003399;
     cursor: pointer;
-  }
-  
-  .todoListMain .theList {
-    list-style: none;
-    color: red;
-    padding-left: 0;
-    width: 250px;
-  }
-  
-  .todoListMain .theList li {
-    color: #333;
-    background-color: rgba(255, 255, 255, .5);
-    padding: 15px;
-    margin-bottom: 15px;
-    border-radius: 5px;
-    list-style: none;
-  }
-  
-  ul.theList {
-    padding: 0;
-    list-style: none;
-    display: inline-flex;
-    justify-content: center;
-    flex-direction: column-reverse;
-  }
-  
-  
+}
+
 .p2 {
   padding: 2rem;
 }
@@ -167,20 +136,27 @@ h6 {
 }
 
 .delete-button {
-    padding: 10px;
-    font-size: 16px;
-    margin: 10px;
+    padding: 1rem;
+    font-size: 1.6rem;
+    margin: 1rem;
     background-color: red;
     color: #FFF;
-    border: 2px solid red;
+    border: 0.2rem solid red;
 }
 
 .delete-button:hover {
     background-color: rgba(255, 0, 0, 0.747);
-    border: 2px solid rgba(255, 0, 0, 0.747);
+    border: 0.2rem solid rgba(255, 0, 0, 0.747);
     cursor: pointer;
 }
 
 .search {
   margin: 1rem;
+}
+
+.search-input {
+  height: 100%;
+  padding: 1rem;
+  font-size: 1.6rem;
+  border: 0.2rem solid hsl(0, 0%, 100%);
 }

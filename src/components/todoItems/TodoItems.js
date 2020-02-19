@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Moment from 'react-moment';
-import '../../index.css';
 
 class TodoItems extends React.Component {
     render() {
